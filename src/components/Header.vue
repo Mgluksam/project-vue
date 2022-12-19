@@ -148,6 +148,9 @@ export default {};
 </script>
 
 <style scoped>
+*{
+  font-family: Montserrat;
+}
 #navbar {
   position: absolute;
   top: 0;
