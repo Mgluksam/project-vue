@@ -1,15 +1,15 @@
 <template>
     <section>
         <h2>Отзывы</h2>
-        <CExample/>
+        <ReviewSlider/>
     </section>
 </template>
 
 <script>
-import CExample from "./CExample.vue";
+import ReviewSlider from "./ReviewSlider.vue";
 export default{
     components:{
-        CExample
+        ReviewSlider
     }
 }
 
@@ -32,18 +32,8 @@ h2{
     color: #050c33;
     margin-bottom:46px;
 }
-.cases{
-    display: flex;
-    flex-wrap: wrap;
-    text-align: left;
-    font-family: Montserrat;
-}
 a:hover{
     color: #050c33;
-}
-.more-btn{
-    text-align: center;
-    margin-bottom: 30px;
 }
 @media (min-width: 1400px){
     .container {
@@ -56,11 +46,9 @@ a:hover{
     }
 }
 @media (max-width: 991px){
-    a{
-        padding: 10px 30px;
-    }
     h2{
         margin-top: 20px;
+        font-size: 32px;
     }
 }
 @media (max-width: 767px){
@@ -70,7 +58,6 @@ a:hover{
         margin-top: initial;
     }
     .container{
-        padding-top: 50px;
         max-width: 767px;
     }
 }

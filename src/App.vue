@@ -1,7 +1,8 @@
 <template>
   <LastCasesSection/>
-  <ReviewsSection/>
   <StaffSection/>
+  <ReviewsSection/>
+
 </template>
 
 <script>

@@ -5,37 +5,38 @@
                 <div id="slider-content">
                     <swiper
                     :spaceBetween="30"
+                    @swiper="onSwiper"
                     :effect="'fade'"
+                    :autoHeight="true" 
                     :navigation="false"
                     :pagination="false"
                     :modules="modules"
                     class="mySwiper"
-                    ref="swiper"
                     >
                     <swiper-slide v-for="r in rs">
                         <div class="review">
-    <div class="views-field views-field-field-project-logo">
-        <div class="field-content">  
-            <img loading="lazy" :src="require('@/'+r.image)" class="img-responsive">
-        </div>
-    </div>
-    <div class="views-field views-field-field-report-text review-text">
-        <div class="field-content">
-            {{ r.text }}
-        </div>
-    </div>
-    <div class="views-field review-author">
-        <div class="field-content">{{ r.author }}</div>
-    </div>
-  </div>
-</swiper-slide>
+                            <div class="views-field views-field-field-project-logo">
+                                <div class="field-content">  
+                                    <img loading="lazy" :src="require('@/'+r.image)" class="img-responsive">
+                                </div>
+                            </div>
+                            <div class="views-field views-field-field-report-text review-text">
+                                <div class="field-content">
+                                    {{ r.text }}
+                                </div>
+                            </div>
+                            <div class="views-field review-author">
+                                <div class="field-content">{{ r.author }}</div>
+                            </div>
+                        </div>
+                        </swiper-slide>
                     </swiper>
                 </div>
                 <nav>
                     <div class="m-auto">
-                    <button type="button" class="slick-slide-prev slick-slide-arrow" ></button>
-                                <span class="slide-num"><span class="slide-num-current">01</span> / 08</span>
-                    <button type="button" class="slick-slide-next slick-slide-arrow"></button>
+                    <button type="button" @click="swiper.slidePrev()" class="slick-slide-prev slick-slide-arrow" ></button>
+                                <span class="slide-num"><span class="slide-num-current">{{ index }}</span> / 08</span>
+                    <button type="button"  @click="swiper.slideNext()" class="slick-slide-next slick-slide-arrow"></button>
                     </div>
                 </nav>
             </div>
@@ -54,19 +55,38 @@
   import "swiper/css/pagination";
   
   // import required modules
-  import { EffectFade, Navigation, Pagination } from "swiper";
+  import { EffectFade, Navigation, Pagination,EffectCards } from "swiper";
   import rs from '../data/reviews.json';
+  import { ref } from 'vue';
   export default {
     components: {
       Swiper,
       SwiperSlide,
     },
     setup() {
-      return {
-        modules: [EffectFade, Navigation, Pagination],
-        rs
-      };
+        const swiper = ref();
+        return {
+            swiper,
+            onSwiper: instance => swiper.value = instance,
+            modules: [EffectFade, Navigation, Pagination, EffectCards],
+            rs,
+        };
     },
+    data(){
+        return{
+            index:"01"
+        }
+    },
+    methods : {
+      onSwipe(v) {
+        this.index= "0" + (v.swiper.activeIndex+1);
+      }
+    },
+    mounted() {
+        this.swiper.on('slideChange',()=>{
+            this.onSwipe(this)
+        });
+    }
   };
   </script>
 
@@ -75,6 +95,7 @@ img{
     height: 100%;
     widows: 100%;
     max-width: fit-content;
+    margin: 0 0 40px;
 }
 .review-text{
     margin-bottom: 28px;
@@ -90,15 +111,9 @@ img{
     line-height: 1.2;
     color: #838b9c;
 }
-/* .review{
-    width: 436px; 
-    position: relative; 
-    left: 0px; 
-    top: 0px; 
-    z-index: 998; 
-    opacity: 0; 
-    transition: opacity 500ms ease 0s;
-} */
+.review{
+    background-color: white;
+}
 .slide-num{
     display: inline-block;
     margin: 0 46px;
@@ -135,7 +150,7 @@ nav{
     width: 980px;
     max-width: 100%;
     margin: auto;
-    margin-top: 74px;
+    padding-top: 74px;
     position: relative;
 }
 #slider-content{
@@ -149,7 +164,6 @@ nav{
     display: flex;
     flex-wrap: wrap;
     position: relative;
-    z-index: 10;
     background: #fff;
     border: 1px solid rgba(0,0,0,.1);
     box-sizing: border-box;
@@ -204,5 +218,61 @@ nav{
 .swiper-slide img {
   display: block;
   width: 100%;
+}
+@media (max-width: 1080px){
+
+}
+@media (max-width: 991px){
+    #content{
+        padding-top: 48px;
+    }
+    #slider{
+        display: block;
+        padding: 15px;
+    }
+    #slider::before{
+        left: 34px;
+        right: 34px;
+        top: -25px;
+    }
+    #slider::after{
+        left: 68px;
+        right: 68px;
+        top: -48px;
+    }
+    #slider-content{
+        width: 100%;
+        float: none;
+        display: block;
+        padding: 20px 15px;
+        border: 0;
+    }
+    nav{
+        text-align: center;
+        border-top: 1px solid #cdcdcd;
+        width: 100%;
+        float: none;
+        display: block;
+        padding: 20px 15px;
+    }
+}
+@media (max-width: 600px){
+    #content{
+        padding-top: 48px;
+    }
+    #slider{
+        display: block;
+        padding: 15px;
+    }
+    #slider::before{
+        top: -15px;
+        left: 15px;
+        right: 15px;
+    }
+    #slider::after{
+        top: -30px;
+        left: 30px;
+        right: 30px;
+    }
 }
 </style>
