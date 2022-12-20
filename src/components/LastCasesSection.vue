@@ -1,36 +1,33 @@
 <template>
     <section class="container m-auto">
-        <h2>Команда</h2>
-        <div class="team">
-            <StaffCard v-for="l in ls" :imgSrc="l.image" :Name="l.name" :post="l.post"/>
+        <h2>Последние кейсы</h2>
+        <div class="cases">
+            <CaseCard v-for="cs in cases" :cs="cs"/>
         </div>
         <div class="more-btn">
-            <a href="">Вся команда</a>
+            <a href="">Показать еще</a>
         </div>
     </section>
 </template>
 
 <script>
-import ls from '../data/staff.json';
-import StaffCard from './StaffCard.vue';
+import cases from '../data/cases.json';
+import CaseCard  from './CaseCard.vue';
 export default{
     data(){
         return{
-          ls  
+          cases  
         } 
     },
     components:{
-        StaffCard
+        CaseCard
     }
 }
 </script>
 
 <style scoped>
-/* Костыль */
-@media (min-width: 1400px){
-    .container {
-        max-width: 1140px;
-    }
+.container{
+    margin-top: 100px;
 }
 h2{
     font-family: Montserrat;
@@ -41,7 +38,7 @@ h2{
     margin-bottom: 80px;
     margin-top: 130px;
 }
-.team{
+.cases{
     display: flex;
     flex-wrap: wrap;
     text-align: left;
@@ -69,6 +66,11 @@ a:hover{
     text-align: center;
     margin-bottom: 30px;
 }
+@media (min-width: 1400px){
+    .container {
+        max-width: 1140px;
+    }
+}
 @media (max-width: 1080px){
     h2{
         font-size: 36px;
@@ -90,6 +92,7 @@ a:hover{
     }
     .container{
         padding-top: 50px;
+        max-width: 767px;
     }
 }
 </style>

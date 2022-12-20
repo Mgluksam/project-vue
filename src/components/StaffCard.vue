@@ -1,5 +1,5 @@
 <template>  
-    <div class="col col-6 col-lg-4 px-3 px-md-5">
+    <div class="col col-6 col-lg-4">
         <img :src="require('@/'+imgSrc)"/>
         <div id="name">{{ Name }}</div>
         <div id="post">{{ post }}</div>
@@ -42,5 +42,15 @@ img{
     font-size: 16px;
     line-height: 1.37;
     margin-bottom: 5px;
+}
+@media (max-width: 767px){
+    div.col{
+        padding: 0 15px;
+    }
+}
+@media (max-width: 600px){
+    div.col{
+        margin-bottom: 20px;
+    }
 }
 </style>
