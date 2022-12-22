@@ -68,9 +68,9 @@
                   <div class="col-4">
                     <div class="support-achievement-wrapper">
                       <div class="support-achievement-title">
-                        <div>
-                          <h style="font-size: 48px">#1</h>
-                          <img
+                        <div style="display:flex">
+                          <div style="font-size: 48px;">#1</div>
+                          <img style="margin-top:-15px"
                             src="./../assets/cup.png"
                             alt="Награда"
                             width="60"
@@ -225,10 +225,11 @@ header {
   border-bottom: 3px solid #f14d34;
 }
 
-.block-main-header {
+.fullscreen{
   position: relative;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 .block-main-background video {
   position: absolute;
@@ -253,6 +254,7 @@ header {
 .main-contact-btn {
   font-family: Montserrat;
   color: #fff;
+  margin-bottom: 45px;
 }
 
 .main-title {
@@ -294,15 +296,17 @@ header {
 
 .support-achievement-wrapper {
   border-left: 3px solid #f14d34;
-  padding: 5px;
-  margin: 0;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    min-height: 80px;
+    height: 100%;
 }
 .support-achievement-title {
   font-size: 24px;
   color: #fff;
   font-weight: bold;
   line-height: 1;
-  margin-left: 5px;
 }
 
 .support-achievement-description {
@@ -310,6 +314,6 @@ header {
   font-size: 12px;
   line-height: 1.25;
   color: rgba(255, 255, 255, 0.7);
-  margin-left: 5px;
+  margin-top:5px;
 }
 </style>
