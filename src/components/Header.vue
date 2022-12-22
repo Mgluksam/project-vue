@@ -9,7 +9,7 @@
           rel="home"
         >
           <img
-            src="./../assets/logo.png"
+            src="./../assets/header/logo.png"
             alt="Главная"
             width="180"
             height="31"
@@ -42,7 +42,7 @@
       <div class="block-main-background">
         <video>
           <!-- autoplay muted loop -->
-          <source src="./../assets/video.mp4" type="video/mp4" />
+          <source src="./../assets/header/video.mp4" type="video/mp4" />
         </video>
       </div>
       <div class="block-main mb-5">
@@ -71,7 +71,7 @@
                         <div style="display:flex">
                           <div style="font-size: 48px;">#1</div>
                           <img style="margin-top:-15px"
-                            src="./../assets/cup.png"
+                            src="./../assets/header/cup.png"
                             alt="Награда"
                             width="60"
                             height="60"

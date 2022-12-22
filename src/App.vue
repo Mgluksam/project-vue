@@ -1,7 +1,5 @@
 <template>
-  <LastCasesSection/>
-  <StaffSection/>
-  <ReviewsSection/>
+  <HeaderVue/>
 
 </template>
 
