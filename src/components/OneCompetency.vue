@@ -12,8 +12,7 @@
             />
           </div>
         </div>
-        <div class="competency-body">
-          {{ text }}
+        <div class="competency-body" v-html="text">
         </div>
       </div>
     </div>

@@ -1,11 +1,11 @@
 [
     {"image": "assets/competencies/competency-1.svg", "text": "Добавление <br/> информации на сайт, <br/> создание новых <br/> разделов"}, 
-    {"image": "assets/competencies/competency-2.svg", "text": ""}, 
-    {"image": "assets/competencies/competency-3.svg", "text": ""}, 
-    {"image": "assets/competencies/competency-4.svg", "text": ""}, 
-    {"image": "assets/competencies/competency-5.svg", "text": ""},
-    {"image": "assets/competencies/competency-6.svg", "text": ""},
-    {"image": "assets/competencies/competency-7.svg", "text": ""},
-    {"image": "assets/competencies/competency-8.svg", "text": ""}
+    {"image": "assets/competencies/competency-2.svg", "text": "Разработка <br/> и оптимизация <br/> модулей сайта"}, 
+    {"image": "assets/competencies/competency-3.svg", "text": "Интеграция с CRM, <br/> 1C, платежными <br/> системами, любыми <br/> веб-сервисами"}, 
+    {"image": "assets/competencies/competency-4.svg", "text": "Любые доработки <br/> функционала <br/> и дизайна"}, 
+    {"image": "assets/competencies/competency-5.svg", "text": "Аудит и мониторинг <br/> безопасности Drupal <br/> сайтов"},
+    {"image": "assets/competencies/competency-6.svg", "text": "Миграция, импорт <br/> контента и апргейд <br/> Drupal"},
+    {"image": "assets/competencies/competency-7.svg", "text": "Оптимизация <br/> и ускорение <br/> Drupal-сайтов"},
+    {"image": "assets/competencies/competency-8.svg", "text": "Веб-маркетинг, <br/> консультации <br/> и работы по SEO"}
     
 ]
