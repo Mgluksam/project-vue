@@ -4,9 +4,9 @@
       <div class="row">
         <div class="col-md-6">
           <h2 class="block-title">
-            17 лет совершенствуем <br />
-            компетенции в Drupal <br />
-            разработке!
+            13 лет совершенствуем <br />
+            компетенции в Друпал <br />
+            поддержке!
           </h2>
           <div class="competencies-description">
             Разрабатываем и оптимизируем модули, расширяем <br />
